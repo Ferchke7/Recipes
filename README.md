@@ -27,7 +27,7 @@ Configuration
 No additional configuration is required.
 Usage
 
-    Start the application by running the main class RecipeApiApplication.java.
+
 
     Use the following endpoints to interact with the API:
         POST /api/register - Register a new user by sending a JSON object with the user's email and password.
@@ -43,21 +43,21 @@ Examples
 Register a New User
 
 Send a POST request to /api/register with the following JSON body:
-
+```
 json
 
 {
    "email": "example@example.com",
    "password": "password123"
 }
-
+```
 The API will respond with a status code of 200 (OK) if the user is successfully registered. If a user with the specified email already exists, the API will respond with a status code of 400 (Bad Request).
 Create a Recipe
 
 Send a POST request to /api/recipe/new with a JSON object containing the recipe details. Include basic authentication by providing the user's email and password as credentials.
 
 json
-
+```
 {
    "name": "Fresh Mint Tea",
    "category": "beverage",
@@ -65,11 +65,11 @@ json
    "ingredients": ["boiled water", "honey", "fresh mint leaves"],
    "directions": ["Boil water", "Pour boiling hot water into a mug", "Add fresh mint leaves", "Mix and let the mint leaves seep for 3-5 minutes", "Add honey and mix again"]
 }
-
+```
 The API will respond with a JSON object containing the ID of the created recipe.
 Retrieve a Recipe
 
-Send a GET request to /api/recipe/{id} to retrieve a recipe with the specified ID. Include basic authentication by providing the user's email and password as credentials.
+Send a GET request to ```/api/recipe/{id}``` to retrieve a recipe with the specified ID. Include basic authentication by providing the user's email and password as credentials.
 
 The API will respond with a JSON object containing the recipe details.
 Update a Recipe
@@ -91,5 +91,3 @@ Send a GET request to /api/recipe/search with the corresponding query parameters
 
 If no recipes are found or the provided query parameters are not valid, the API will respond with an empty JSON array. If more than one parameter is passed or no parameters are passed, the API will respond with a status code of 400 (Bad Request).
 Contributing
-
-Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
