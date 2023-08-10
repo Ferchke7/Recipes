@@ -28,7 +28,6 @@ public class UserService {
         if (user.getPassword() == null) {
             throw new IllegalArgumentException("Password cannot be null");
         }
-        //String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         users.save(user);
     }
